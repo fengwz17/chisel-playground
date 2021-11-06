@@ -13,16 +13,16 @@ lazy val root = (project in file("."))
     name := "chisel-playground",
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3"    % "3.5-SNAPSHOT",
-      "edu.berkeley.cs" %% "chiseltest" % "0.3.3" % "test"
+      "edu.berkeley.cs" %% "chiseltest" % "0.5-SNAPSHOT" % "test"
     ),
     scalacOptions ++= Seq(
       "-Xsource:2.11",
       "-language:reflectiveCalls",
       "-deprecation",
       "-feature",
-      "-Xcheckinit",
+      "-Xcheckinit"
       // Enables autoclonetype2 in 3.4.x (on by default in 3.5)
-      "-P:chiselplugin:useBundlePlugin"
+      // "-P:chiselplugin:useBundlePlugin"
     ),
     addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % "3.5-SNAPSHOT" cross CrossVersion.full),
     addCompilerPlugin("org.scalamacros" % "paradise"       % "2.1.1" cross CrossVersion.full)
