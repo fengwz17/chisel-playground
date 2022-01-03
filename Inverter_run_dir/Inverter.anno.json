@@ -1,0 +1,114 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.backends.experimental.smt.Btor2Emitter$"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  },
+  {
+    "class":"firrtl.backends.experimental.smt.TransitionSystemAnnotation",
+    "sys":{
+      "name":"Inverter",
+      "inputs":[
+        {
+          "name":"reset",
+          "width":1
+        },
+        {
+          "name":"in",
+          "width":1
+        },
+        {
+          "name":"hold",
+          "width":1
+        }
+      ],
+      "states":[
+        {
+          "sym":{
+            "name":"delay",
+            "width":1
+          },
+          "next":{
+            "name":"_GEN_0",
+            "width":1
+          }
+        }
+      ],
+      "signals":[
+        {
+          "name":"_T",
+          "e":{
+            "a":{
+              "name":"hold",
+              "width":1
+            },
+            "b":{
+              "value":0,
+              "width":1
+            }
+          },
+          "lbl":{
+            
+          }
+        },
+        {
+          "name":"_delay_T",
+          "e":{
+            "a":{
+              "name":"in",
+              "width":1
+            },
+            "b":{
+              "value":0,
+              "width":1
+            }
+          },
+          "lbl":{
+            
+          }
+        },
+        {
+          "name":"_GEN_0",
+          "e":{
+            "cond":{
+              "name":"_T",
+              "width":1
+            },
+            "tru":{
+              "name":"_delay_T",
+              "width":1
+            },
+            "fals":{
+              "name":"delay",
+              "width":1
+            }
+          },
+          "lbl":{
+            
+          }
+        },
+        {
+          "name":"out",
+          "e":{
+            "name":"delay",
+            "width":1
+          },
+          "lbl":{
+            
+          }
+        }
+      ],
+      "comments":{
+        "delay":"@[Inverter.scala 15:17]",
+        "_T":"@[Inverter.scala 16:7]",
+        "out":"@[Inverter.scala 19:6]",
+        "_delay_T":"@[Inverter.scala 17:13]",
+        "_GEN_0":"@[Inverter.scala 16:14 17:10 15:17]"
+      },
+      "header":""
+    }
+  }
+]

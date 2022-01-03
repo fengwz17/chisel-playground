@@ -1,0 +1,11 @@
+Transiton System
+Inverter
+input reset : bv<1>
+input in : bv<1>
+input hold : bv<1>
+node _T : bv<1> = eq(hold, 1'b0)
+node _delay_T : bv<1> = eq(in, 1'b0)
+node _GEN_0 : bv<1> = ite(_T, _delay_T, delay)
+output out : bv<1> = delay
+state delay : bv<1>
+  [next] _GEN_0
