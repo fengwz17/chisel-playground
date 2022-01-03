@@ -9,6 +9,6 @@ import chisel3._
 class CounterFormalSpec extends AnyFlatSpec with ChiselScalatestTester with Formal {
   behavior of "CounterProp"
   it should "pass" in {
-    verify(new CounterProp(2), Seq(BoundedCheck(20)))
+    verify(new CounterProp(2), Seq(BoundedCheck(20), BtormcEngineAnnotation))
   }
 }
